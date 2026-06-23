@@ -156,7 +156,17 @@ export default function ConnectionApp() {
           {/* Buttons */}
           <div style={{ display: "flex", gap: 16 }}>
             <button
-              onClick={() => setPage("connect")}
+             onClick={() => {
+  const message =
+    "I accepted your connection request and I'm free now.";
+
+  window.open(
+    `https://wa.me/917416748564?text=${encodeURIComponent(message)}`,
+    "_blank"
+  );
+
+  setPage("connect");
+}}
               style={{ padding: "14px 36px", borderRadius: 50, border: "none", background: "#534AB7", color: "white", fontSize: 16, fontWeight: 500, cursor: "pointer", transition: "transform 0.1s, opacity 0.1s" }}
               onMouseDown={e => e.currentTarget.style.transform = "scale(0.97)"}
               onMouseUp={e => e.currentTarget.style.transform = "scale(1)"}
@@ -260,7 +270,19 @@ export default function ConnectionApp() {
             {TIME_SLOTS.map(slot => (
               <button
                 key={slot.id}
-                onClick={() => { setSelectedSlot(slot); setPage("scheduled"); }}
+                onClick={() => {
+  setSelectedSlot(slot);
+
+  const message =
+    `I am not free now. Let's connect at ${slot.label} (${slot.sub}).`;
+
+  window.open(
+    `https://wa.me/917416748564?text=${encodeURIComponent(message)}`,
+    "_blank"
+  );
+
+  setPage("scheduled");
+}}
                 style={{ padding: "18px 12px", borderRadius: 16, border: `1.5px solid ${selectedSlot?.id === slot.id ? "#534AB7" : "rgba(83,74,183,0.2)"}`, background: "white", cursor: "pointer", textAlign: "left", transition: "all 0.15s", display: "flex", flexDirection: "column", gap: 4 }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = "#534AB7"; e.currentTarget.style.background = "#EEEDFE"; }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(83,74,183,0.2)"; e.currentTarget.style.background = "white"; }}
