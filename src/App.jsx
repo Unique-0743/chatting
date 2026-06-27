@@ -54,7 +54,15 @@ export default function ConnectionApp() {
     if (nx >= maxX - 4) {
       setDragging(false);
       setSwiped(true);
-      setTimeout(() => setPage("happy"), 400);
+     
+       const message =
+    "Ippudu nenu Kaali ee...";
+
+  window.open(
+    `https://wa.me/917416748564?text=${encodeURIComponent(message)}`,
+    "_blank"
+  );
+   setTimeout(() => setPage("happy"), 400);
     }
   }
 
@@ -157,13 +165,7 @@ export default function ConnectionApp() {
           <div style={{ display: "flex", gap: 16 }}>
             <button
              onClick={() => {
-  const message =
-    "I accepted your connection request and I'm free now.";
-
-  window.open(
-    `https://wa.me/917416748564?text=${encodeURIComponent(message)}`,
-    "_blank"
-  );
+ 
 
   setPage("connect");
 }}
@@ -274,7 +276,7 @@ export default function ConnectionApp() {
   setSelectedSlot(slot);
 
   const message =
-    `I am not free now. Let's connect at ${slot.label} (${slot.sub}).`;
+    `Nenu busy ga unnanu. Let's connect at ${slot.label} (${slot.sub}).`;
 
   window.open(
     `https://wa.me/917416748564?text=${encodeURIComponent(message)}`,
