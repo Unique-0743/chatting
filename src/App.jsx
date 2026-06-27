@@ -56,7 +56,7 @@ export default function ConnectionApp() {
       setSwiped(true);
      
        const message =
-    "Ippudu nenu Kaali ee...";
+    "Ippudu nenu Kaali ee 😁...";
 
   window.open(
     `https://wa.me/917416748564?text=${encodeURIComponent(message)}`,
@@ -276,7 +276,7 @@ export default function ConnectionApp() {
   setSelectedSlot(slot);
 
   const message =
-    `Nenu busy ga unnanu. Let's connect at ${slot.label} (${slot.sub}).`;
+    `Nenu busy ga unnanu😎. Let's connect at ${slot.label} (${slot.sub}).`;
 
   window.open(
     `https://wa.me/917416748564?text=${encodeURIComponent(message)}`,
